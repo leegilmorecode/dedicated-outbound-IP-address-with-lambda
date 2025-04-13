@@ -1,0 +1,40 @@
+{
+  "info": {
+    "_postman_id": "cb88903b-537a-4a05-bb17-19b10125bc74",
+    "name": "Egress-Lambda-Dedicated-IP",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "752706"
+  },
+  "item": [
+    {
+      "name": "Create Order",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"customerId\": \"cust-12345\",\n  \"customerName\": \"Jane Doe\",\n  \"customerEmail\": \"jane.doe@example.com\",\n  \"customerPhone\": \"+441234567890\",\n  \"shippingAddress\": {\n    \"line1\": \"123 Main Street\",\n    \"line2\": \"Apartment 4B\",\n    \"city\": \"London\",\n    \"postcode\": \"SW1A 1AA\",\n    \"country\": \"UK\"\n  },\n  \"items\": [\n    {\n      \"productId\": \"prod-001\",\n      \"name\": \"Leather Handbag\",\n      \"quantity\": 1,\n      \"price\": 120.00,\n      \"currency\": \"GBP\"\n    },\n    {\n      \"productId\": \"prod-002\",\n      \"name\": \"Wallet\",\n      \"quantity\": 2,\n      \"price\": 45.00,\n      \"currency\": \"GBP\"\n    }\n  ],\n  \"subtotal\": 210.00,\n  \"total\": 210.00\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://{{api-url}}/develop/v1/orders/",
+          "protocol": "https",
+          "host": ["{{api-url}}"],
+          "path": ["develop", "v1", "orders", ""]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "api-url",
+      "value": "your-rest-api-url",
+      "type": "default"
+    }
+  ]
+}
